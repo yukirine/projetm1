@@ -5,7 +5,22 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 const theme = createTheme({
-  // Paramètres du thème
+  typography: {
+    fontFamily: [
+      'Public Sans', 
+      'sans-serif', 
+      '-apple-system', 
+      'BlinkMacSystemFont', 
+      '"Segoe UI"', 
+      'Roboto', 
+      '"Helvetica Neue"', 
+      'Arial', 
+      'sans-serif', 
+      '"Apple Color Emoji"', 
+      '"Segoe UI Emoji"', 
+      '"Segoe UI Symbol"'
+    ].join(','),
+  },
 });
 
 const SleepQuality = () => {
@@ -22,36 +37,29 @@ const SleepQuality = () => {
       <Box
         sx={{
           p: 2,
-          backgroundColor: 'white',
-          boxShadow: 3,
-          borderRadius: 2,
           width: '100%',
+          backgroundColor: 'transparent',
         }}
       >
         <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="h6" component="h2">
-              Résumé de la qualité du sommeil
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography>
-              Durée totale du sommeil: {sleepData.totalSleep}
+          <Grid item xs={6}>
+            <Typography fontWeight='bold' sx={{ color: '#FBFAF5' }}>
+            &nbsp;Durée totale du sommeil: <Typography sx={{ color: '#FBFAF5'  }}> &nbsp;{sleepData.totalSleep} </Typography>
             </Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography>
-              Pourcentage de sommeil REM: {sleepData.remPercentage}
+            <Typography fontWeight='bold' sx={{ color: '#FBFAF5' }}>
+            &nbsp;Pourcentage de sommeil REM: <Typography sx={{ color: '#FBFAF5' }}> &nbsp;{sleepData.remPercentage} </Typography>
             </Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography>
-              Pourcentage de sommeil profond: {sleepData.deepSleepPercentage}
+            <Typography fontWeight='bold' sx={{ color: '#FBFAF5' }}>
+              &nbsp;Pourcentage de sommeil profond: <Typography sx={{ color: '#FBFAF5' }}>&nbsp;{sleepData.deepSleepPercentage}</Typography>
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <Typography>
-              Nombre de réveils: {sleepData.awakenings}
+          <Grid item xs={6}>
+            <Typography fontWeight='bold' sx={{ color: '#FBFAF5' }}>
+              &nbsp;Nombre de réveils: <Typography sx={{ color: '#FBFAF5' }}>&nbsp;{sleepData.awakenings}</Typography>
             </Typography>
           </Grid>
         </Grid>

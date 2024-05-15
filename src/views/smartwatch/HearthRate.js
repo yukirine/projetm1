@@ -1,11 +1,27 @@
 import { Fragment } from 'react';
 import Box from '@mui/system/Box';
+import Typography from '@mui/material/Typography';  // Importation du composant Typography
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
 
 const theme = createTheme({
-  // Paramètres du thème
+  typography: {
+    fontFamily: [
+      'Public Sans', 
+      'sans-serif', 
+      '-apple-system', 
+      'BlinkMacSystemFont', 
+      '"Segoe UI"', 
+      'Roboto', 
+      '"Helvetica Neue"', 
+      'Arial', 
+      'sans-serif', 
+      '"Apple Color Emoji"', 
+      '"Segoe UI Emoji"', 
+      '"Segoe UI Symbol"'
+    ].join(','),
+  },
 });
 
 const HearthRate = () => {
@@ -28,29 +44,33 @@ const HearthRate = () => {
 
   return (
     <Fragment>
-      <Box
-        sx={{
-          padding: 2,  // Ajoute un padding autour du contenu
-          margin: 2,  // Ajoute une marge extérieure pour séparer le composant des autres éléments
-          backgroundColor: 'white',  // Définit un fond gris clair pour le composant
-          borderRadius: 1,  // Arrondit les coins de la Box
-          boxShadow: 1 , // Applique une ombre légère pour un effet 3D subtil
-          height: '40vh', // Hauteur ajustée pour inclure le graphique
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          position: 'relative',
-        }}
-      >
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <Box
+          sx={{
+            padding: 2,
+            margin: 2,
+            backgroundColor: 'white',
+            borderRadius: 1,
+            boxShadow: 1,
+            height: '50vh', // Ajusté pour inclure le titre
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+          }}
+        >
+          {/* Ajout du titre */}
+          <Typography variant="h4" sx={{  marginBottom: 2 , fontSize: '1.8rem', fontWeight: 'bold' }}>
+          &nbsp;Rythme Cardiaque
+          </Typography>
           <div style={{
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: 200,  // Largeur de l'image du cœur
-            height: 200  // Hauteur de l'image du cœur
+            width: 200,
+            height: 200
           }}>
             <img src={heartImageUrl} alt="Heart" style={{ width: '100%', height: '100%' }} />
             <h1 style={{
@@ -66,22 +86,17 @@ const HearthRate = () => {
               72 BPM
             </h1>
           </div>
-        </ThemeProvider>
-        <Box sx={{ width: '80%',
-          height: '40vh',
-          mt: 4,
-          display: 'flex',  // Assure que le contenu interne utilise flexbox
-          justifyContent: 'center',  // Centre horizontalement dans la box
-          alignItems: 'center'  // Centre verticalement dans la box
-         }}> {/* Box pour le graphique */}
-          <Line data={data} />
+          <Box sx={{ width: '80%', height: '40vh', mt: 4 }}>
+            <Line data={data} />
+          </Box>
         </Box>
-      </Box>
+      </ThemeProvider>
     </Fragment>
   );
 };
 
 export default HearthRate;
+
 
 
 
