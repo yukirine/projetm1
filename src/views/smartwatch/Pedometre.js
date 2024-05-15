@@ -87,7 +87,8 @@ const Pedometer = () => {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            position: 'relative'
+            position: 'relative',
+            width: '100%', // Makes the Box responsive
           }}
         >
           <Typography  variant="h4" component="h2" sx={{ marginBottom: 2 , fontSize: '1.8rem', fontWeight: 'bold'}}>

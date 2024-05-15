@@ -105,6 +105,7 @@ const sleepData = () => {
             alignItems: 'center',
             justifyContent: 'center',
             position: 'relative',
+            width: '100%', // Makes the Box responsive
           }}
         >
          

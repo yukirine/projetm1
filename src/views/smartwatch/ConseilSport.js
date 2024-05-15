@@ -57,6 +57,7 @@ const Dashboard = () => {
           alignItems: 'center',
           justifyContent: 'center',
           position: 'relative',
+          width: '100%', // Makes the Box responsive
         }}>
         <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" version="1.1" id="Layer_1" viewBox="0 0 300.833 300.833" >
 <g>

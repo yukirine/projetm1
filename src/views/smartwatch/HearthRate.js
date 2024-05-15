@@ -58,6 +58,7 @@ const HearthRate = () => {
             alignItems: 'center',
             justifyContent: 'center',
             position: 'relative',
+            width: '100%', // Makes the Box responsive
           }}
         >
           {/* Ajout du titre */}

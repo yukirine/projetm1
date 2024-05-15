@@ -216,6 +216,7 @@ const SportStat = () => {
         justifyContent: 'space-around',
         padding: 2,
         backgroundColor: 'white',
+        width: '100%', // Makes the Box responsive
       }}>
         {dataPoints.map((data, index) => (
           <Box key={index} sx={{
