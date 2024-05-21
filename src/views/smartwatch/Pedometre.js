@@ -77,7 +77,7 @@ const Pedometer = () => {
       <ThemeProvider theme={theme}>
         <Box
           sx={{
-            padding: 4, // Ajoute un padding autour du contenu
+            padding: 2, // Ajoute un padding autour du contenu
             margin: 2, // Ajoute une marge extérieure pour séparer le composant des autres éléments
             backgroundColor: 'white', // Définit un fond gris clair pour le composant
             borderRadius: 1, // Arrondit les coins de la Box

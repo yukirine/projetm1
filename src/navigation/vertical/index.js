@@ -41,6 +41,39 @@ const navigation = () => {
       subject: 'smartwatch',
       icon: 'fluent-mdl2:health-solid'
     },
+
+    {
+      title: 'Mes pas en détaille',
+      path: '/smartwatch',
+      action: 'read',
+      subject: 'smartwatch',
+      icon: 'mdi:walk'
+    },
+
+    {
+      title: 'Mon sommeil',
+      path: '/smartwatch',
+      action: 'read',
+      subject: 'smartwatch',
+      icon: 'wi:night-alt-cloudy'
+    },
+    {
+      title: 'Mes données sports',
+      path: '/smartwatch',
+      action: 'read',
+      subject: 'smartwatch',
+      icon: 'healthicons:swim'
+    },
+    {
+      sectionTitle: 'Brouillon',
+    },
+    {
+      title: 'Brouillon',
+      path: '/brouillon',
+      action: 'read',
+      subject: 'brouillon',
+      icon: 'fluent-mdl2:health-solid'
+    },
     {
       sectionTitle: 'Autres'
     },
