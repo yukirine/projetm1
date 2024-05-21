@@ -25,31 +25,35 @@ const Smartwatch = () => {
 
   return (
     <Grid container spacing={2}> {/* Espacement entre les colonnes */}
-    <Grid item xs={12}> {/* Prend 6 colonnes sur 12, donc la moitié de l'espace disponible */}
-      <Pedometre />
-      
+      <Grid item xs={12}> {/* Prend 6 colonnes sur 12, donc la moitié de l'espace disponible */}
+        <Pedometre />
+
+      </Grid>
+      <Grid item xs={12} md={5}> {/* Prend 6 colonnes sur 12, donc la moitié de l'espace disponible */}
+        <Conseil />
+
+      </Grid>
+      <Grid item xs={12} // Default to full width on small screens
+        md={7}  // 8 columns on medium screens
+      >
+        <HearthRate />
+
+      </Grid>
+      <Grid item xs={12}>
+        <SleepData />
+
+      </Grid>
+      <Grid item xs={12} // Default to full width on small screens
+        md={8}  // 8 columns on medium screens
+      >
+        <SportData />
+
+      </Grid>
+      <Grid item xs={12} md={4}>
+        <ConseilSport />
+
+      </Grid>
     </Grid>
-    <Grid item xs={5}> {/* Prend 6 colonnes sur 12, donc la moitié de l'espace disponible */}
-      <Conseil />
-      
-    </Grid>
-    <Grid item xs={7}>
-      <HearthRate />
-       
-    </Grid>
-    <Grid item xs={12}>
-      <SleepData />
-      
-    </Grid>
-    <Grid item xs={8}>
-      <SportData />
-      
-    </Grid>
-    <Grid item xs={4}>
-    <ConseilSport />
-      
-    </Grid>
-  </Grid>
   );
 };
 

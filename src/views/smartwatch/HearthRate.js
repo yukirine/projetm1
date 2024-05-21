@@ -2,23 +2,37 @@ import { Fragment } from 'react';
 import Box from '@mui/system/Box';
 import Typography from '@mui/material/Typography';  // Importation du composant Typography
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled } from '@mui/system';
 import { Line } from 'react-chartjs-2';
 import 'chart.js/auto';
+
+const ResponsiveTypography = styled(Typography)(({ theme }) => ({
+  position: 'relative',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  marginBottom: theme.spacing(2),
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: '1.8rem', // Responsive font size
+
+}));
 
 const theme = createTheme({
   typography: {
     fontFamily: [
-      'Public Sans', 
-      'sans-serif', 
-      '-apple-system', 
-      'BlinkMacSystemFont', 
-      '"Segoe UI"', 
-      'Roboto', 
-      '"Helvetica Neue"', 
-      'Arial', 
-      'sans-serif', 
-      '"Apple Color Emoji"', 
-      '"Segoe UI Emoji"', 
+      'Public Sans',
+      'sans-serif',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
       '"Segoe UI Symbol"'
     ].join(','),
   },
@@ -52,7 +66,6 @@ const HearthRate = () => {
             backgroundColor: 'white',
             borderRadius: 1,
             boxShadow: 1,
-            height: '50vh', // Ajusté pour inclure le titre
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -62,16 +75,16 @@ const HearthRate = () => {
           }}
         >
           {/* Ajout du titre */}
-          <Typography variant="h4" sx={{  marginBottom: 2 , fontSize: '1.8rem', fontWeight: 'bold' }}>
-          &nbsp;Rythme Cardiaque
-          </Typography>
+          <ResponsiveTypography variant="h6" component="h3">
+            &nbsp;Rythme Cardiaque
+          </ResponsiveTypography>
           <div style={{
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            width: 200,
-            height: 200
+            width: '25vw',
+            height: '25vw',
           }}>
             <img src={heartImageUrl} alt="Heart" style={{ width: '100%', height: '100%' }} />
             <h1 style={{
@@ -81,14 +94,23 @@ const HearthRate = () => {
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
-              fontSize: '24px',
+              fontSize: '2vh',
+              textAlign: 'center',
               zIndex: 10
             }}>
               72 BPM
             </h1>
           </div>
-          <Box sx={{ width: '80%', height: '40vh', mt: 4 }}>
-            <Line data={data} />
+          <Box sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            width: '100%', // Makes the Box responsive
+
+          }}>
+            <Line data={data} options={{ responsive: true, maintainAspectRatio: false }} />
           </Box>
         </Box>
       </ThemeProvider>

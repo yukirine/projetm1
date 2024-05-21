@@ -8,17 +8,17 @@ import SportStat from './SportStat';
 const theme = createTheme({
   typography: {
     fontFamily: [
-      'Public Sans', 
-      'sans-serif', 
-      '-apple-system', 
-      'BlinkMacSystemFont', 
-      '"Segoe UI"', 
-      'Roboto', 
-      '"Helvetica Neue"', 
-      'Arial', 
-      'sans-serif', 
-      '"Apple Color Emoji"', 
-      '"Segoe UI Emoji"', 
+      'Public Sans',
+      'sans-serif',
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
       '"Segoe UI Symbol"'
     ].join(','),
   },
@@ -49,7 +49,7 @@ const Pedometer = () => {
     'rgba(255, 159, 64, 0.5)',  // Orange
     'rgba(199, 199, 199, 0.5)', // Grey
     'rgba(163, 205, 89, 0.5)',  // Light green
-    
+
   ];
 
   // Utilize these colors in your dataset
@@ -82,7 +82,6 @@ const Pedometer = () => {
             backgroundColor: 'white',
             borderRadius: 1,
             boxShadow: 1,
-            height: '50vh', // Ajusté pour inclure le titre
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -91,12 +90,11 @@ const Pedometer = () => {
             width: '100%', // Makes the Box responsive
           }}
         >
-          <Typography variant="h6" component="h2" sx={{ marginBottom: 2 , fontSize: '1.8rem', fontWeight: 'bold' }}>
-            
-          &nbsp;Résumé de l'activité sportive
+          <Typography variant="h6" component="h2" sx={{ marginBottom: 2, fontSize: '1.8rem', fontWeight: 'bold', textAlign: "center" }}>
+            &nbsp;Résumé de l'activité sportive
           </Typography>
           <Box sx={{ width: '100%', marginBottom: 2 }}>
-            <SportStat/>
+            <SportStat />
           </Box>
           <Box sx={{ width: '100%', height: '30vh' }}>
             <Bar data={caloriesData} options={options} />
