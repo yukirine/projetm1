@@ -150,10 +150,10 @@ const sleepData = () => {
 
           <Box
             sx={{
-              height: '10vh',
-              width: '100%',
+              display: 'flex', 
+              alignItems: 'center',
               backgroundColor: 'transparent',
-              marginBottom: 0,
+            
             }}
           >
             <SleepQuality />

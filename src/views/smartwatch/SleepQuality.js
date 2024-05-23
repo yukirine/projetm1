@@ -37,9 +37,7 @@ const SleepQuality = () => {
       <Box
         sx={{
           p: 2,
-          width: '100%',
           backgroundColor: 'transparent',
-          width: '100%', // Makes the Box responsive
         }}
       >
         <Grid container spacing={2}>
